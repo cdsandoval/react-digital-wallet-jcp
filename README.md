@@ -1,4 +1,4 @@
-# Simple Forum
+# React-digital-wallet-jcp
 ​
 ## Members
 ​
