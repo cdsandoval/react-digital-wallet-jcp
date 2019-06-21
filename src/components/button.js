@@ -1,11 +1,13 @@
-// withdraw: ["Transporte", "Comida", "Servicios basicos"],
-// deposit: ["Sueldo", "Fijo"]
 /** @jsx jsx */
-import React from "react";
 import { jsx } from "@emotion/core";
+import { Link } from "@reach/router";
 
-function Button({ children }) {
-  return <button>{children}</button>;
+function Button({ path, children }) {
+  return (
+    <Link to={path}>
+      <button>{children}</button>
+    </Link>
+  );
 }
 
 export default Button;
