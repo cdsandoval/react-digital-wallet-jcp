@@ -1,7 +1,3 @@
-/**@jsx jsx */
-import React from "react";
-import { jsx, css } from "@emotion/core";
-
 const container = {
   textAlign: "center",
   top: "50%",
@@ -22,16 +18,4 @@ const header = {
   borderBottom: "1px solid black"
 };
 
-function MonthlyReport() {
-  return (
-    <div css={container}>
-      <p css={header}>Saldo: 3000</p>
-      <div>
-        <p>Ingreso: 1000</p>
-        <p>Gastos: 500</p>
-      </div>
-    </div>
-  );
-}
-
-export default MonthlyReport;
+export { container, header };
