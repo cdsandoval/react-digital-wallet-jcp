@@ -1,5 +1,6 @@
 import React from "react";
 import Report from "./components/monthly-report";
+import AddComponent from "./components/add";
 import { Router } from "@reach/router";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div>
       <Router>
         <Report path="/report" />
+        <AddComponent path="/add" />
       </Router>
     </div>
   );
