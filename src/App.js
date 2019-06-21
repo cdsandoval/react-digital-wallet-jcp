@@ -1,6 +1,7 @@
 import React from "react";
+import Report from "./components/monthly-report";
+import Categorize from "./components/categorize";
 import { Router } from "@reach/router";
-
 import Home from "./views/home";
 import Report from "./components/monthly-report";
 import Categorize from "./components/categorize";
