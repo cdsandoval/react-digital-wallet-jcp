@@ -1,10 +1,8 @@
 import React from "react";
-import Report from "./components/monthly-report";
-import Categorize from "./components/categorize";
+import Report from "./views/monthly-report";
+import Categorize from "./views/categorize";
 import { Router } from "@reach/router";
 import Home from "./views/home";
-import Report from "./components/monthly-report";
-import Categorize from "./components/categorize";
 import AddComponent from "./components/add";
 
 function App() {
