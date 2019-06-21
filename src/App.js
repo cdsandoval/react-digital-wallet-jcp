@@ -9,7 +9,7 @@ function App() {
     <div>
       <Router>
         <Report path="/report" />
-        <Home />
+        <Home path="/" />
       </Router>
     </div>
   );
