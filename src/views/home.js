@@ -7,58 +7,58 @@ import { redirectTo } from "@reach/router";
 
 import Button from "../components/button";
 
-const initialWallet = [
-  {
-    id: 1,
-    type: 1,
-    category: "transporte",
-    amount: 100,
-    mes: "Enero"
-  },
-  {
-    id: 2,
-    type: 0,
-    category: "transporte",
-    amount: 200,
-    mes: "Enero"
-  },
-  {
-    id: 3,
-    type: 1,
-    category: "transporte",
-    amount: 100,
-    mes: "Enero"
-  },
-  {
-    id: 4,
-    type: 1,
-    category: "Trans",
-    amount: 150,
-    mes: "Enero"
-  },
-  {
-    id: 5,
-    type: 0,
-    category: "Cosa de locos",
-    amount: 103,
-    mes: "Enero"
-  },
-  {
-    id: 6,
-    type: 0,
-    category: "Cositas",
-    amount: 500,
-    mes: "Enero"
-  }
-];
+// const initialWallet = [
+//   {
+//     id: 1,
+//     type: 1,
+//     category: "transporte",
+//     amount: 100,
+//     mes: "Enero"
+//   },
+//   {
+//     id: 2,
+//     type: 0,
+//     category: "transporte",
+//     amount: 200,
+//     mes: "Enero"
+//   },
+//   {
+//     id: 3,
+//     type: 1,
+//     category: "transporte",
+//     amount: 100,
+//     mes: "Enero"
+//   },
+//   {
+//     id: 4,
+//     type: 1,
+//     category: "Trans",
+//     amount: 150,
+//     mes: "Enero"
+//   },
+//   {
+//     id: 5,
+//     type: 0,
+//     category: "Cosa de locos",
+//     amount: 103,
+//     mes: "Enero"
+//   },
+//   {
+//     id: 6,
+//     type: 0,
+//     category: "Cositas",
+//     amount: 500,
+//     mes: "Enero"
+//   }
+// ];
 
 function Home() {
   return (
     <>
       <div>
-        <Button>Add</Button>
-        <Button>Report</Button>
-        <Button>Report of the Month</Button>
+        <Button path="/add">Add</Button>
+        <Button path="/report">Report</Button>
+        <Button path="/report/idMonth">Report of the Month</Button>
       </div>
       <div>
         <table>
