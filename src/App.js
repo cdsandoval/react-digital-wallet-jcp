@@ -1,10 +1,16 @@
-import React from 'react';
+import React from "react";
+import { Router } from "@reach/router";
+
+import Home from "./views/home";
+import Report from "./components/monthly-report";
 
 function App() {
   return (
-    <div >Hello World!
-
-    
+    <div>
+      <Router>
+        <Report path="/report" />
+        <Home path="/" />
+      </Router>
     </div>
   );
 }
