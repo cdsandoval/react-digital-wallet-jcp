@@ -2,7 +2,6 @@ function Add(data) {
   const id = Date.now();
   const date = new Date();
   const month = date.toLocaleDateString("en-us", { month: "long" });
-  console.log(data);
   return {
     type: "ADD",
     payload: {
