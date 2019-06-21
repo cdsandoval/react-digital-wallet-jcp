@@ -1,10 +1,13 @@
-import React from 'react';
+import React from "react";
+import Report from "./components/monthly-report";
+import { Router } from "@reach/router";
 
 function App() {
   return (
-    <div >Hello World!
-
-    
+    <div>
+      <Router>
+        <Report path="/report" />
+      </Router>
     </div>
   );
 }
