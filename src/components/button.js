@@ -1,13 +1,12 @@
 /** @jsx jsx */
-import React from "react";
 import { jsx } from "@emotion/core";
-import { Router } from "@reach/router";
+import { Link } from "@reach/router";
 
 function Button({ path, children }) {
   return (
-    <Router>
-      <button path={path}>{children}</button>
-    </Router>
+    <Link to={path}>
+      <button>{children}</button>
+    </Link>
   );
 }
 
