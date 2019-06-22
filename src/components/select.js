@@ -6,11 +6,11 @@ import { connect } from "react-redux";
 function Select(props) {
   let list;
   switch (props.name) {
-    case "withdraw":
-      list = props.withdraw;
+    case "category":
+      list = props.category;
       break;
-    case "deposit":
-      list = props.deposit;
+    case "types":
+      list = props.types;
       break;
     case "month":
       list = props.month;
@@ -39,9 +39,9 @@ function Select(props) {
 
 function mapState(state) {
   return {
-    withdraw: state.type.withdraw,
-    deposit: state.type.deposit,
-    month: state.type.month
+    category: state.type.category,
+    month: state.type.month,
+    types: state.type.types
   };
 }
 

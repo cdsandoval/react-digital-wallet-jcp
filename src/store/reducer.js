@@ -1,7 +1,13 @@
 const initialState = {
   type: {
-    withdraw: ["Transporte", "Comida", "Servicios basicos", "Extras"],
-    deposit: ["Sueldo Fijo", "Extras"],
+    category: [
+      "Transporte",
+      "Comida",
+      "Servicios basicos",
+      "Extras",
+      "Sueldo Fijo"
+    ],
+    types: ["withdraw", "deposit"],
     month: [
       "January",
       "February",
