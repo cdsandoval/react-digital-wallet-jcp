@@ -8,17 +8,14 @@ function Categorize() {
   function onSubmit(e) {
     e.preventDefault();
   }
+
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <Select name="withdraw" />
-        <Select name="deposit" />
+        <Select name="types" />
+        <Select name="category" />
         <Select name="month" />
-        <input
-          type="text"
-          name="money"
-          css={{ display: "block", margin: "30px auto" }}
-        />
+        <p>Resultado</p>
         <button type="submit" css={{ display: "block", margin: "30px auto" }}>
           Search
         </button>
