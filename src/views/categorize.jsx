@@ -2,7 +2,7 @@
 import React from "react";
 import { jsx } from "@emotion/core";
 
-import Select from "./select";
+import Select from "../components/select";
 
 function Categorize() {
   function onSubmit(e) {

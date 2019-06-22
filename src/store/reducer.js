@@ -59,9 +59,16 @@ const initialState = {
       category: "Comida",
       amount: 500,
       mes: "June"
+    },
+    {
+      id: 7,
+      type: 1,
+      category: "Deporte",
+      amount: 200,
+      mes: "June"
     }
   ],
-  totalMonthly: []
+  totalMonthly: [{ month: "June", total: "-300" }]
 };
 
 function reducer(state = initialState, action = {}) {
