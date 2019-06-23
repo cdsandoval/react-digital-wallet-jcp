@@ -11,11 +11,10 @@ const container = {
 const header = {
   lineHeight: "100px",
   padding: "10px 100px",
-  backgroundColor: "#eee",
+  backgroundColor: "white",
   verticalAlign: "middle",
   fontSize: "1.3rem",
-  marginTop: "0px",
-  borderBottom: "1px solid black"
+  marginTop: "0px"
 };
 
 export { container, header };

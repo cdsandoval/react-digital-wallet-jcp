@@ -14,4 +14,14 @@ function Add(data) {
   };
 }
 
-export { Add };
+function Total(data) {
+  return {
+    type: "TOTAL",
+    payload: {
+      month: data.month,
+      total: data.total
+    }
+  };
+}
+
+export { Add, Total };

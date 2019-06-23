@@ -1,72 +1,25 @@
 /** @jsx jsx */
-import React from "react";
-import { jsx, css } from "@emotion/core";
+import { jsx } from "@emotion/core";
 import { connect } from "react-redux";
-import { Add } from "../store/actions";
-
-const Container = {
-  display: "flex",
-  flexDirection: "column",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  width: "100%",
-  height: "100vh"
-};
-
-const styledSelect = {
-  alignItems: "center",
-  justifyContent: "center",
-  width: "500px",
-  padding: "1.5em",
-  background: "skyblue",
-  borderRadius: "0.5em",
-  margin: "15px auto"
-};
-
-const inputAmount = {
-  margin: "1em 0",
-  fontSize: "20px",
-  paddingTop: "10px",
-  paddingBottom: "10px",
-  borderRadius: "4px",
-  outline: "none",
-  border: "none",
-  borderBottom: "1px solid #ddd",
-  width: "500px",
-  textAlign: "center",
-  "&:focus": {
-    border: "1px solid red",
-    background: "##e5f1f3"
-  }
-};
-
-const submitButton = {
-  lineHeight: "1.5em",
-  background: "#757575",
-  border: "none",
-  color: "white",
-  fontSize: "20px",
-  fontWeight: "bold",
-  padding: "0.2em",
-  cursor: "pointer",
-  borderRadius: "0.25rem",
-  textAlign: "center",
-  width: "150px",
-  "&:hover": {
-    backgroundColor: "#484848"
-  }
-};
+import { Add, Total } from "../store/actions";
+import { navigate } from "@reach/router";
+import {
+  Container,
+  styledSelect,
+  submitButton,
+  inputAmount
+} from "../utils/add-css";
 
 function AddComponent(props) {
   function setAmount(e) {
     e.preventDefault();
     const payload = {
-      type: e.currentTarget.type.value,
+      type: e.currentTarget.type.value === "withdraw" ? 0 : 1,
       category: e.currentTarget.category.value,
-      amount: e.currentTarget.amount.value
+      amount: Number(e.currentTarget.amount.value)
     };
     props.AddTest(payload);
+    navigate("/");
   }
 
   return (
@@ -75,14 +28,14 @@ function AddComponent(props) {
       <form onSubmit={setAmount}>
         <select css={styledSelect} defaultValue="select" name="type">
           <option value="select" disabled hidden>
-            Select type
+            Choose One
           </option>
-          <option value="Withdraws">Withdraws</option>
-          <option value="Deposit">Deposit</option>
+          <option value="withdraw">Withdraw</option>
+          <option value="deposit">Deposit</option>
         </select>
         <select defaultValue="select" css={styledSelect} name="category">
           <option value="select" disabled hidden>
-            Select category
+            Choose One
           </option>
           <option value="Basics">Basics</option>
           <option value="Transport">Transport</option>
@@ -108,12 +61,6 @@ function AddComponent(props) {
   );
 }
 
-function mapState(state) {
-  return {
-    walletTest: state.wallet
-  };
-}
-
 function mapDispatch(dispatch) {
   return {
     AddTest(payload) {
@@ -123,6 +70,6 @@ function mapDispatch(dispatch) {
 }
 
 export default connect(
-  mapState,
+  null,
   mapDispatch
 )(AddComponent);
