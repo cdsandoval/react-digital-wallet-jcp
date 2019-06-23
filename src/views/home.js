@@ -2,11 +2,13 @@
 import React from "react";
 import { jsx } from "@emotion/core";
 import { connect } from "react-redux";
-import { FaUser } from "react-icons/fa";
 
 import Button from "../components/button";
 
 function Home(props) {
+  React.useState(() => {
+    console.log(props.wallet);
+  });
   return (
     <>
       <div
@@ -35,6 +37,7 @@ function Home(props) {
             backgroundColor: "black"
           }}
           src="https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
+          alt="Show user face"
         />
       </div>
 
@@ -44,7 +47,7 @@ function Home(props) {
             <th>Category</th>
             <th>Amount</th>
           </tr>
-          {props.wallet.map(wallet => {
+          {Object.values(props.wallet).map(wallet => {
             return (
               <tr>
                 <td>{wallet.category}</td>
@@ -56,10 +59,16 @@ function Home(props) {
           })}
         </table>
       </div>
-      <div>
-        <Button path="/add">Add</Button>
-        <Button path="/report">Report</Button>
-        <Button path="/report/idMonth">Report of the Month</Button>
+      <div css={{ textAlign: "center" }}>
+        <Button path="/add" color="#58b368">
+          Add
+        </Button>
+        <Button path="/report" color="#009975">
+          Report
+        </Button>
+        <Button path="/report/idMonth" color="#d9d872">
+          Report of the Month
+        </Button>
       </div>
     </>
   );
