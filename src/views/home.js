@@ -1,73 +1,53 @@
-// withdraw: ["Transporte", "Comida", "Servicios basicos"],
-// deposit: ["Sueldo", "Fijo"]
 /** @jsx jsx */
 import React from "react";
 import { jsx } from "@emotion/core";
-import { redirectTo } from "@reach/router";
+import { connect } from "react-redux";
 
 import Button from "../components/button";
 
-const initialWallet = [
-  {
-    id: 1,
-    type: 1,
-    category: "transporte",
-    amount: 100,
-    mes: "Enero"
-  },
-  {
-    id: 2,
-    type: 0,
-    category: "transporte",
-    amount: 200,
-    mes: "Enero"
-  },
-  {
-    id: 3,
-    type: 1,
-    category: "transporte",
-    amount: 100,
-    mes: "Enero"
-  },
-  {
-    id: 4,
-    type: 1,
-    category: "Trans",
-    amount: 150,
-    mes: "Enero"
-  },
-  {
-    id: 5,
-    type: 0,
-    category: "Cosa de locos",
-    amount: 103,
-    mes: "Enero"
-  },
-  {
-    id: 6,
-    type: 0,
-    category: "Cositas",
-    amount: 500,
-    mes: "Enero"
-  }
-];
-
-function Home() {
+function Home(props) {
+  React.useState(() => {
+    console.log(props.wallet);
+  });
   return (
     <>
-      <div>
-        <Button>Add</Button>
-        <Button>Report</Button>
-        <Button>Report of the Month</Button>
+      <div
+        css={{
+          display: "flex",
+          justifyContent: "space-between",
+          backgroundColor: "#eee",
+          padding: "10px",
+          width: "300px"
+        }}
+      >
+        <h2
+          css={{
+            fontFamily: "Arial, Helvetica, sans-serif",
+            alignSelf: "center"
+          }}
+        >
+          My wallet
+        </h2>
+        <img
+          css={{
+            alignSelf: "center",
+            width: "40px",
+            height: "40px",
+            borderRadius: "50%",
+            backgroundColor: "black"
+          }}
+          src="https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
+          alt="Show user face"
+        />
       </div>
+
       <div>
-        <table>
+        <table css={{ textAlign: "center", margin: "30px auto" }}>
           <tr>
             <th>Category</th>
             <th>Amount</th>
           </tr>
-          {initialWallet.map(wallet => {
-            console.log(wallet.amount);
+          {Object.values(props.wallet).map(wallet => {
             return (
               <tr>
                 <td>{wallet.category}</td>
@@ -79,8 +59,28 @@ function Home() {
           })}
         </table>
       </div>
+      <div css={{ textAlign: "center" }}>
+        <Button path="/add" color="#58b368">
+          Add
+        </Button>
+        <Button path="/report" color="#009975">
+          Report
+        </Button>
+        <Button path="/report/idMonth" color="#d9d872">
+          Report of the Month
+        </Button>
+      </div>
     </>
   );
 }
 
-export default Home;
+function mapState(state) {
+  return {
+    wallet: state.wallet
+  };
+}
+
+export default connect(
+  mapState,
+  null
+)(Home);

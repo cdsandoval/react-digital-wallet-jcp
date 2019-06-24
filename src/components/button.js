@@ -1,12 +1,27 @@
-// withdraw: ["Transporte", "Comida", "Servicios basicos"],
-// deposit: ["Sueldo", "Fijo"]
 /** @jsx jsx */
-import React from "react";
 import { jsx } from "@emotion/core";
-import { redirectTo } from "@reach/router";
+import { Link } from "@reach/router";
 
-function Button({ children }) {
-  return <button>{children}</button>;
+function Button({ path, children, color }) {
+  return (
+    <Link to={path}>
+      <button
+        css={{
+          borderRadius: "5px",
+          padding: "7px",
+          margin: "10px",
+          backgroundColor: `${color}`,
+          border: "2px solid black",
+          cursor: "pointer",
+          ":hover": {
+            backgroundColor: "#eee"
+          }
+        }}
+      >
+        {children}
+      </button>
+    </Link>
+  );
 }
 
 export default Button;
