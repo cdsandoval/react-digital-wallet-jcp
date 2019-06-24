@@ -1,7 +1,7 @@
 {
   "name": "My Wallet PWA",
   "short_name": "My Wallet",
-  "start_url": "https://codeable-wallet-pwa.herokuapp.com/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#fafafa",
   "description": "An example Progressive Web App to create ToDos using React & Redux",
